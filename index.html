@@ -2,7 +2,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mi Lunita</title>
 
 <style>
@@ -12,31 +15,32 @@ background: linear-gradient(135deg,#2b0a3d,#4b1c6b,#1a0824);
 min-height:100vh;
 font-family:Georgia, serif;
 margin:0;
-padding:40px;
+padding:30px 15px;
 overflow-x:hidden;
 display:flex;
 justify-content:center;
 align-items:flex-start;
 }
 
-
+/* CARTA */
 
 .carta{
 background:white;
-width:700px;
-padding:45px;
+width:100%;
+max-width:700px;
+padding:40px;
 border-radius:18px;
 box-shadow:0 25px 60px rgba(0,0,0,0.6);
 position:relative;
 z-index:2;
 }
 
-
+/* TITULO */
 
 .titulo{
 text-align:center;
 color:#e0aaff;
-font-size:42px;
+font-size:40px;
 margin-bottom:10px;
 text-shadow:0 0 10px #c77dff,0 0 20px #9d4edd;
 }
@@ -48,7 +52,7 @@ letter-spacing:10px;
 margin-bottom:25px;
 }
 
-
+/* TEXTO */
 
 .texto{
 font-size:19px;
@@ -58,7 +62,7 @@ white-space:pre-line;
 color:#333;
 }
 
-
+/* FIRMA */
 
 .firma{
 text-align:right;
@@ -68,14 +72,14 @@ color:#5a189a;
 font-style:italic;
 }
 
-
+/* LUNA */
 
 .luna{
 position:fixed;
-top:40px;
-right:60px;
-width:80px;
-height:80px;
+top:30px;
+right:30px;
+width:70px;
+height:70px;
 background:#f1e3ff;
 border-radius:50%;
 box-shadow:
@@ -92,6 +96,7 @@ z-index:1;
 100%{transform:scale(1);opacity:0.9;}
 }
 
+/* ESTRELLAS */
 
 .estrellas{
 position:fixed;
@@ -116,7 +121,7 @@ from{opacity:0.2;transform:scale(1);}
 to{opacity:1;transform:scale(1.5);}
 }
 
-
+/* CORAZONES */
 
 .corazon{
 position:fixed;
@@ -129,6 +134,40 @@ opacity:0.6;
 @keyframes caer{
 0%{transform:translateY(-10vh);}
 100%{transform:translateY(110vh);}
+}
+
+/* AJUSTES PARA CELULAR */
+
+@media (max-width:600px){
+
+.carta{
+padding:25px;
+}
+
+.titulo{
+font-size:30px;
+}
+
+.texto{
+font-size:16px;
+line-height:1.7;
+}
+
+.firma{
+font-size:18px;
+}
+
+.decoracion{
+letter-spacing:6px;
+}
+
+.luna{
+width:55px;
+height:55px;
+top:20px;
+right:20px;
+}
+
 }
 
 </style>
@@ -155,8 +194,6 @@ Con cariño 💜
 </div>
 
 <script>
-
-
 
 let mensaje = `
 
@@ -201,8 +238,6 @@ un lugar mucho más bonito.
 
 `;
 
-
-
 let i=0;
 
 function escribir(){
@@ -220,8 +255,6 @@ setTimeout(escribir,35);
 }
 
 escribir();
-
-
 
 function crearEstrellas(){
 
@@ -243,8 +276,6 @@ document.querySelector(".estrellas").appendChild(estrella);
 }
 
 crearEstrellas();
-
-
 
 function crearCorazon(){
 
